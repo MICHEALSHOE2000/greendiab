@@ -80,12 +80,11 @@ whatsappBtn.style = `
 document.body.appendChild(whatsappBtn);
 
 // ✅ Formspree Submit Handler
-const form = document.getElementById("order-form");
+const form = document.querySelector("#order-form form");
 if (form) {
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
     const formData = new FormData(form);
-    const formObj = Object.fromEntries(formData.entries());
 
     try {
       const res = await fetch(form.action, {
@@ -105,6 +104,7 @@ if (form) {
     }
   });
 }
+
 // 🔄 FAQ Toggle
 const faqQuestions = document.querySelectorAll(".faq-question");
 
